@@ -138,12 +138,12 @@ public class Territory  : MonoBehaviour
         col.a = 100f;
         TerritoryMeshRenderer.material.color = col;
         //new territory owner gains Nbrterritory
-        Debug.Log("Faction color ="  );
-        Debug.Log(p.Faction.FactionColor.linear + " ==" + Color.red.linear +" "+ (p.Faction.FactionColor.linear==Color.red.linear));
+        //Debug.Log("Faction color ="  );
+       // Debug.Log(p.Faction.FactionColor.linear + " ==" + Color.red.linear +" "+ (p.Faction.FactionColor.linear==Color.red.linear));
         if (m_currentColor == Color.red)
         {
             FactionManager.RED.NbrTerritories++;
-            Debug.Log("ici--------****" + FactionManager.RED.NbrTerritories);
+          //  Debug.Log("ici--------****" + FactionManager.RED.NbrTerritories);
         }
         else if (m_currentColor == Color.blue)
         {

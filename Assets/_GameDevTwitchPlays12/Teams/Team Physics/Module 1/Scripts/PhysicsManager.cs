@@ -8,18 +8,25 @@ public class PhysicsManager : MonoBehaviour {
     private PlayerManager playerManager;
     private PlayerAction playerAction;
     private FactionManager factionManager;
+    public Timer timerGame;
 
     private void Awake()
     {
         territoryManager = gameObject.GetComponent<TerritoryManager>();
         playerManager = gameObject.GetComponent<PlayerManager>();
         playerAction = gameObject.GetComponent<PlayerAction>();
-        factionManager= gameObject.GetComponent<FactionManager>();
         playerAction.m_territoryManager = territoryManager;
+        TimerAPI.AddEndGameTimerListener(test);
+        timerGame = gameObject.AddComponent<Timer>();
+        TimerAPI.LaunchGameTimer(5,timerGame);
 
+        
     }
 
-
+    private void test(bool end)
+    {
+        Debug.Log(end);
+    }
     // Use this for initialization
     void Start () {
         StartGame();
